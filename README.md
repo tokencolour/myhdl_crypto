@@ -1,1 +1,1 @@
-# myhdl_practice
+# Crypto cores with MyHDL
