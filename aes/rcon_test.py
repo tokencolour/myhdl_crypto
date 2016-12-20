@@ -1,11 +1,11 @@
 from myhdl import block, StopSimulation, instance, Signal, intbv, always, delay, now, traceSignals
-from rcon import rcon_lut
+from rcon import rcon_lut, R_CONSTANTS
 @block
 def test():
 	clk = Signal(0)
 	rcon = Signal(intbv(0)[32:])
 	key_load = Signal(0)
-	rcon_inst = rcon_lut(clk, rcon, key_load)
+	rcon_inst = rcon_lut(clk, rcon, key_load, R_CONSTANTS)
 
 	@always(delay(10))
 	def clkgen():
