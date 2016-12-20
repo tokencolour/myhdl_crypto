@@ -1,11 +1,11 @@
 from myhdl import block, StopSimulation, instance, Signal, intbv, always, delay, now, traceSignals
-from s_box import subword
+from s_box import subword, S_BOX_CONTENT
 
 @block
 def test():
 	out_p = Signal(intbv(0)[8:])
 	in_p = Signal(intbv(0)[8:])
-	s_inst = subword(out_p, in_p)
+	s_inst = subword(out_p, in_p, S_BOX_CONTENT)
 	
 	@instance
 	def stimulus():
